@@ -37,6 +37,9 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
+import base64
+from pathlib import Path
+
 
 # ============================================================
 # Language configuration
@@ -391,49 +394,67 @@ def build_docx(translated_pages: list[str], target_lang: str) -> bytes:
 # ============================================================
 st.set_page_config(page_title="Lughat - PDF Translator", page_icon="📄", layout="centered")
 
+logo_path = Path("logo.png")  # or full path
+with open(logo_path, "rb") as f:
+    logo_base64 = base64.b64encode(f.read()).decode()
 st.markdown(
-    """
+    f"""
     <style>
 
 
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap');
 
-        .htu-banner{
+        .htu-banner{{
             font-family:Inter,-apple-system,sans-serif;
             background:var(--secondary-background-color);
             border:1px solid rgba(128,128,128,.2);
             border-radius:14px;
             padding:22px 26px;
             margin:6px 0 16px 0;
-        }
+        }}
 
-        .htu-banner h1{
+        .htu-banner h1{{
             font-family:Fraunces,Georgia,serif;
             font-weight:500;
             font-size:26px;
             color:var(--text-color);
             margin:0 0 4px 0;
-        }
+        }}
 
-        .htu-banner p{
+        .htu-banner p{{
             color:var(--text-color);
             opacity:.8;
             margin:0;
             font-size:14px;
-        }
+        }}
 
-        .htu-rule{
+        .htu-rule{{
             height:3px;
             width:86px;
             margin-top:12px;
             border-radius:2px;
             background:linear-gradient(90deg,#BD8B3F,#21283B,#3F7858);
-        }
+        }}
+
+            .htu-banner h1 {{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+         }}
+
+         .htu-banner .logo {{
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+        }}
 
     </style>
 
     <div class="htu-banner">
-      <h1>✒️ Lughat</h1>
+      <h1>
+        <img src="data:image/png;base64,{logo_base64}" alt="Lughat Logo" class="logo"> 
+        Lughat
+    </h1>
       <p>Upload a PDF, translate it, download the result as PDF and DOCX. Powered by Google Translate — free, no API key.</p>
       <div class="htu-rule"></div>
     </div>
