@@ -1,5 +1,5 @@
 """
-PDF Translator — Streamlit app
+Qalam - A Doc Translator — Streamlit app
 ================================
 Upload a PDF, pick a source and target language, get back a translated
 PDF *and* DOCX. Built from the original Colab notebook pipeline:
@@ -389,7 +389,7 @@ def build_docx(translated_pages: list[str], target_lang: str) -> bytes:
 # ============================================================
 # Streamlit UI
 # ============================================================
-st.set_page_config(page_title="PDF Translator", page_icon="📄", layout="centered")
+st.set_page_config(page_title="Qalam - Doc Translator", page_icon="📄", layout="centered")
 
 st.markdown(
     """
@@ -403,7 +403,7 @@ st.markdown(
         background:linear-gradient(90deg,#BD8B3F,#21283B,#3F7858);}
     </style>
     <div class="htu-banner">
-      <h1>📄 PDF Translator</h1>
+      <h1>✒️ Qalam</h1>
       <p>Upload a PDF, translate it, download the result as PDF and DOCX. Powered by Google Translate — free, no API key.</p>
       <div class="htu-rule"></div>
     </div>
