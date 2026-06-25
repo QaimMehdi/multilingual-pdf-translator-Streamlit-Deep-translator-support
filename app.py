@@ -389,7 +389,7 @@ def build_docx(translated_pages: list[str], target_lang: str) -> bytes:
 # ============================================================
 # Streamlit UI
 # ============================================================
-st.set_page_config(page_title="Qalam - Doc Translator", page_icon="📄", layout="centered")
+st.set_page_config(page_title="Qalam - PDF Translator", page_icon="📄", layout="centered")
 
 st.markdown(
     """
@@ -413,7 +413,7 @@ st.markdown(
 
 with st.sidebar:
     st.header("Settings")
-    source_name = st.selectbox("Source language", list(SOURCE_LANGS.keys()), index=list(SOURCE_LANGS.keys()).index("Hindi"))
+    source_name = st.selectbox("Source language", list(SOURCE_LANGS.keys()), index=list(SOURCE_LANGS.keys()).index("Auto-detect"))
     target_name = st.selectbox("Target language", list(TARGET_LANGS.keys()), index=list(TARGET_LANGS.keys()).index("Urdu"))
     st.caption(
         "Target languages are limited to scripts this app can correctly "
