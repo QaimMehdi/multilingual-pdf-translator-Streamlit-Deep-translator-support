@@ -1,5 +1,5 @@
 """
-Qalam - A Doc Translator — Streamlit app
+Lughat - A Doc Translator — Streamlit app
 ================================
 Upload a PDF, pick a source and target language, get back a translated
 PDF *and* DOCX. Built from the original Colab notebook pipeline:
@@ -389,7 +389,7 @@ def build_docx(translated_pages: list[str], target_lang: str) -> bytes:
 # ============================================================
 # Streamlit UI
 # ============================================================
-st.set_page_config(page_title="Qalam - PDF Translator", page_icon="📄", layout="centered")
+st.set_page_config(page_title="Lughat - PDF Translator", page_icon="📄", layout="centered")
 
 st.markdown(
     """
@@ -433,7 +433,7 @@ st.markdown(
     </style>
 
     <div class="htu-banner">
-      <h1>✒️ Qalam</h1>
+      <h1>✒️ Lughat</h1>
       <p>Upload a PDF, translate it, download the result as PDF and DOCX. Powered by Google Translate — free, no API key.</p>
       <div class="htu-rule"></div>
     </div>
