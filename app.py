@@ -392,7 +392,7 @@ def build_docx(translated_pages: list[str], target_lang: str) -> bytes:
 # ============================================================
 # Streamlit UI
 # ============================================================
-st.set_page_config(page_title="Lughat - PDF Translator", page_icon="📄", layout="centered")
+st.set_page_config(page_title="Lughat - PDF Translator", page_icon="logo.png", layout="centered")
 
 logo_path = Path("logo.png")  # or full path
 with open(logo_path, "rb") as f:
