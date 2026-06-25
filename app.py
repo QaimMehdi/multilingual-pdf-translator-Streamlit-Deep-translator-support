@@ -394,14 +394,44 @@ st.set_page_config(page_title="Qalam - PDF Translator", page_icon="📄", layout
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap');
-    .htu-banner{font-family:Inter,-apple-system,sans-serif;background:#FAF7F2;border:1px solid #E3DACD;
-        border-radius:14px;padding:22px 26px;margin:6px 0 16px 0;}
-    .htu-banner h1{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:26px;color:#21283B;margin:0 0 4px 0;}
-    .htu-banner p{color:#5B6275;margin:0;font-size:14px;}
-    .htu-rule{height:3px;width:86px;margin-top:12px;border-radius:2px;
-        background:linear-gradient(90deg,#BD8B3F,#21283B,#3F7858);}
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=Inter:wght@400;500;600&display=swap');
+
+        .htu-banner{
+            font-family:Inter,-apple-system,sans-serif;
+            background:var(--secondary-background-color);
+            border:1px solid rgba(128,128,128,.2);
+            border-radius:14px;
+            padding:22px 26px;
+            margin:6px 0 16px 0;
+        }
+
+        .htu-banner h1{
+            font-family:Fraunces,Georgia,serif;
+            font-weight:500;
+            font-size:26px;
+            color:var(--text-color);
+            margin:0 0 4px 0;
+        }
+
+        .htu-banner p{
+            color:var(--text-color);
+            opacity:.8;
+            margin:0;
+            font-size:14px;
+        }
+
+        .htu-rule{
+            height:3px;
+            width:86px;
+            margin-top:12px;
+            border-radius:2px;
+            background:linear-gradient(90deg,#BD8B3F,#21283B,#3F7858);
+        }
+
     </style>
+
     <div class="htu-banner">
       <h1>✒️ Qalam</h1>
       <p>Upload a PDF, translate it, download the result as PDF and DOCX. Powered by Google Translate — free, no API key.</p>
@@ -410,7 +440,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
 with st.sidebar:
     st.header("Settings")
     source_name = st.selectbox("Source language", list(SOURCE_LANGS.keys()), index=list(SOURCE_LANGS.keys()).index("Auto-detect"))
